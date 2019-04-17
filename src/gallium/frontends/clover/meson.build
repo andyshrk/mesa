@@ -27,7 +27,7 @@ clover_opencl_cpp_args = [
   '-DCL_USE_DEPRECATED_OPENCL_2_0_APIS',
   '-DCL_USE_DEPRECATED_OPENCL_2_1_APIS',
   '-DCL_USE_DEPRECATED_OPENCL_2_2_APIS',
-  '-DLIBCLC_INCLUDEDIR="@0@/"'.format(dep_clc.get_variable(pkgconfig : 'includedir')),
+  '-DLIBCLC_INCLUDEDIR="/usr/share"',
   '-DLIBCLC_LIBEXECDIR="@0@/"'.format(dep_clc.get_variable(pkgconfig : 'libexecdir'))
 ]
 clover_spirv_cpp_args = []
