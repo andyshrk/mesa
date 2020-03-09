@@ -84,7 +84,7 @@ files_libvc4 = files(
 vc4_c_args = []
 
 libvc4_neon = []
-if host_machine.cpu_family() == 'arm'
+if host_machine.cpu_family() == 'arm' and not get_option('gallium-vc4-neon').disabled()
   libvc4_neon = static_library(
     'vc4_neon',
     'vc4_tiling_lt_neon.c',
@@ -93,7 +93,7 @@ if host_machine.cpu_family() == 'arm'
     ],
     c_args : '-mfpu=neon',
   )
-  vc4_c_args += '-DUSE_ARM_ASM'
+  vc4_c_args += '-DVC4_TILING_LT_NEON'
 endif
 
 if dep_simpenrose.found()

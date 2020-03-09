@@ -89,7 +89,7 @@ vc4_load_lt_image(void *dst, uint32_t dst_stride,
                   void *src, uint32_t src_stride,
                   int cpp, const struct pipe_box *box)
 {
-#ifdef USE_ARM_ASM
+#ifdef VC4_TILING_LT_NEON
         if (util_get_cpu_caps()->has_neon) {
                 vc4_load_lt_image_neon(dst, dst_stride, src, src_stride,
                                        cpp, box);
@@ -105,7 +105,7 @@ vc4_store_lt_image(void *dst, uint32_t dst_stride,
                    void *src, uint32_t src_stride,
                    int cpp, const struct pipe_box *box)
 {
-#ifdef USE_ARM_ASM
+#ifdef VC4_TILING_LT_NEON
         if (util_get_cpu_caps()->has_neon) {
                 vc4_store_lt_image_neon(dst, dst_stride, src, src_stride,
                                         cpp, box);

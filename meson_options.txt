@@ -134,6 +134,13 @@ option(
 )
 
 option(
+  'gallium-vc4-neon',
+  type : 'feature',
+  deprecated: {'true': 'enabled', 'false': 'disabled'},
+  description : 'enable gallium vc4 optional neon support.',
+)
+
+option(
   'va-libs-path',
   type : 'string',
   value : '',
