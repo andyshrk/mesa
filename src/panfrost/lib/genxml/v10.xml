@@ -578,6 +578,16 @@
     <field name="Opcode" size="8" start="56" type="CEU Opcode" default="RUN_COMPUTE"/>
   </struct>
 
+  <struct name="CEU RUN_COMPUTE_INDIRECT" size="2">
+    <field name="Workgroups per task" size="16" start="0" type="uint"/>
+    <field name="Progress increment" size="1" start="32" type="bool" default="true"/>
+    <field name="SRT select" size="2" start="40" type="uint"/>
+    <field name="SPD select" size="2" start="42" type="uint"/>
+    <field name="TSD select" size="2" start="44" type="uint"/>
+    <field name="FAU select" size="2" start="46" type="uint"/>
+    <field name="Opcode" size="8" start="56" type="CEU Opcode" default="RUN_COMPUTE_INDIRECT"/>
+  </struct>
+
   <struct name="CEU RUN_IDVS" size="2">
     <field name="Flags override" size="32" start="0" type="hex"/>
     <field name="Progress increment" size="1" start="32" type="bool" default="true"/>
