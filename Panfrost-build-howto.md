@@ -1,6 +1,12 @@
 # Build Panfrost on your board
 
-1. Install  dependent libraries
+1. Install arm mali firmware：
+
+   The mali firmware can get from https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/arm/mali/arch10.8
+
+   And should be placed under：/lib/firmware/arm/mali/arch10.8/mali_csffw.bin.
+
+2. Install  dependent libraries
 
    ```
    sudo apt install flex bison python3-mako libwayland-egl-backend-dev libxcb-dri3-dev libxcb-dri2-0-dev libxcb-glx0-dev libx11-xcb-dev libxcb-present-dev libxcb-sync-dev libxxf86vm-dev libxshmfence-dev libxrandr-dev libwayland-dev libxdamage-dev libxext-dev libxfixes-dev x11proto-dri2-dev  x11proto-present-dev x11proto-gl-dev x11proto-xf86vidmode-dev libexpat1-dev libudev-dev gettext mesa-utils xutils-dev libpthread-stubs0-dev ninja-build bc flex bison cmake git valgrind llvm  python3-pip pkg-config zlib1g-dev wayland-protocols libxcb-shm0-dev meson
@@ -8,7 +14,7 @@
 
    
 
-2. Build libdrm
+3. Build libdrm
 
    ```shell
    git clone https://gitlab.freedesktop.org/mesa/drm
@@ -21,7 +27,7 @@
 
    
 
-3. Build mesa
+4. Build mesa
 
    ```
    git clone https://gitlab.freedesktop.org/mesa/mesa.git
